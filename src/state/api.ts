@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import { GetKpisResponse } from './types'
 
 // call endtpoint of backend
 export const api = createApi({
@@ -7,12 +8,11 @@ export const api = createApi({
 	tagTypes: ["Kpis"],
 	endpoints: (build) =>({
 		// api call
-		getKpis: build.query<void, void>({
+		getKpis: build.query<Array<GetKpisResponse>, void>({
 			query: () => "kpi/kpis/",
 			providesTags: ["Kpis"]
 		})
 	})
-
 })
 
 export const { useGetKpisQuery } = api
