@@ -31,3 +31,14 @@ export interface GetKpisResponse {
 	monthlyData: Array<Month>; 
 	dailyData: Array<Date>;
 }
+
+export interface GetProductResponse {
+	id: string;
+	_id: string;
+	__v: number;
+	price: number;
+	expense: number;
+	tranactions: Array<string>;
+	createdAt: string;
+	updatedAt: string;
+}
